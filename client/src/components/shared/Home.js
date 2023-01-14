@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Home = () => (
   <>
     <Image 
-      src='https://images.unsplash.com/photo-1608096281339-5bcae1ec2f12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2369&q=80'
+      src='https://images.unsplash.com/photo-1509281373149-e957c6296406?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=856&q=80'
       alt='home'
       width='50%'
       position='center'
@@ -12,12 +12,10 @@ const Home = () => (
     <Container>
       <Row>
         <Col>
-          <h1>Headline text</h1>
+          <h1>Movies</h1>
         </Col>
         <Col>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam</p>
+          <p>Signup or login to your account!</p>
           <Row>
             <Col>
               <Link to='/register'>
@@ -42,16 +40,14 @@ const Home = () => (
       <Row>
         <Col>
           <Image 
-            src="https://images.unsplash.com/photo-1607923432780-7a9c30adcb72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2369&q=80"
+            src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
             alt='head2'
             width='50%'
           />
         </Col>
         <Col>
-          <h1>Headline text</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam</p>
+          <h1>Find your movie!</h1>
+          <p>You can also find movie reviews!</p>
         </Col>
       </Row>
     </Container>
@@ -59,27 +55,21 @@ const Home = () => (
     <h1>FAQ</h1>
     <Accordion defaultActiveKey="0">
       <Accordion.Item eventKey="0">
-        <Accordion.Header>Accordion Item #1</Accordion.Header>
+        <Accordion.Header>Do you have reviews</Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam
+          Yes we do!
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
+        <Accordion.Header>How many movies?</Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam
+          All of them!
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="2">
-        <Accordion.Header>Accordion Item #3</Accordion.Header>
+        <Accordion.Header>Whats a good movie?</Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
+          I don't know pick one.
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
