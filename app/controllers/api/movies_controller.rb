@@ -38,7 +38,7 @@ class Api::MoviesController < ApplicationController
   end
 
   def set_genre
-    @genre = @Genre.find(params[:genre_id])
+    @genre = Genre.find(params[:genre_id])
   end
 
   def set_movie

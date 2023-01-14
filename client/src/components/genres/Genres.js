@@ -3,9 +3,10 @@ import GenreList from './GenreList';
 import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 import GenreForm from './GenreForm';
-import Flash from "../shared/Flash";
+import Flash from '../shared/Flash';
+import { Link } from 'react-router-dom';
 
-const Genres = ({ genres, getAllGenres, msgs, setMsgs }) => {
+const Genres = ({ genres, getAllGenres, msgs, setMsgs  }) => {
   const [adding, setAdd] = useState(false)
 
   useEffect( () => {

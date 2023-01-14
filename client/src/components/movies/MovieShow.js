@@ -19,7 +19,7 @@ const MovieShow = ({ id, movie_name, description, length, deleteMovie }) => {
           <Col>{length}</Col>
           <Col>
             <Button variant="primary" onClick={() => setShow(true)}>
-              eye
+              Info
             </Button>
           </Col>
         </Row>

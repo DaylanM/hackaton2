@@ -40,7 +40,7 @@ const MovieForm = ({ setAdd, addMovie, id, movie_name, description, length, upda
           </Form.Control>
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Body</Form.Label>
+          <Form.Label>Movie Description</Form.Label>
           <Form.Control 
             name='description'
             placeholder='Movie Description'

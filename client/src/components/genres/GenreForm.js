@@ -3,7 +3,7 @@ import { GenreConsumer } from '../../providers/GenreProvider';
 import { Form, Button } from 'react-bootstrap';
 import { useLocation, useParams } from 'react-router-dom';
 
-const GenreForm = ({ setAdd, addGenre, updateGenre, genre_des, genre_type }) => {
+const GenreForm = ({ setAdd, addGenre, updateGenre }) => {
   const [genre, setGenre] = useState({ genre_des: '', genre_type: '' })
   const location = useLocation()
   const { id } = useParams()
@@ -50,6 +50,9 @@ const GenreForm = ({ setAdd, addGenre, updateGenre, genre_des, genre_type }) => 
             required
           />
         </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
       </Form>
     </>
   )

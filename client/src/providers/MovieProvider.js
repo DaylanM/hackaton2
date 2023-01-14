@@ -9,8 +9,8 @@ const MovieProvider = ({ children }) => {
   const [movies, setMovies] = useState([])
   const [msgs, setMsgs] = useState(null)
 
-  const getAllMovies = (genreID) => {
-    axios.get(`/api/genre/${genreID}/movies`)
+  const getAllMovies = (genreId) => {
+    axios.get(`/api/genres/${genreId}/movies`)
       .then( res => setMovies(res.data) )
       .catch( err => {
         console.log(err)
@@ -18,8 +18,8 @@ const MovieProvider = ({ children }) => {
       })
   }
 
-  const addMovie = (genreID, movie) => {
-    axios.post(`/api/genre/${genreID}/movies`, { movie })
+  const addMovie = (genreId, movie) => {
+    axios.post(`/api/genres/${genreId}/movies`, { movie })
       .then( res => setMovies([...movies, res.data]) )
       .catch( err => {
         console.log(err)
@@ -27,8 +27,8 @@ const MovieProvider = ({ children }) => {
       })
   }
 
-  const updateMovie = (genreID, id, movie) => {
-    axios.put(`/api/genre/${genreID}/movies/${id}`, { movie })
+  const updateMovie = (genreId, id, movie) => {
+    axios.put(`/api/genres/${genreId}/movies/${id}`, { movie })
       .then(res => {
         const newUpdatedMovies = movies.map(n => {
           if (n.id === id) {
@@ -44,8 +44,8 @@ const MovieProvider = ({ children }) => {
       })
   }
 
-  const deleteMovie = (genreID, id) => {
-    axios.delete(`/api/genre/${genreID}/movies/${id}`)
+  const deleteMovie = (genreId, id) => {
+    axios.delete(`/api/genre/${genreId}/movies/${id}`)
       .then( res => setMovies( movies.filter(n => n.id !== id )))
       .catch( err => {
         console.log(err)
