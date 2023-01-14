@@ -33,9 +33,9 @@ const GenreForm = ({ setAdd, addGenre, updateGenre }) => {
         <Form.Group className="mb-3">
           <Form.Label>Genre</Form.Label>
           <Form.Control 
-            name='genre'
+            name='genre_des'
             value={genre.genre_des}
-            onChange={(e) => setCat({ ...genre, name: e.target.value})}
+            onChange={(e) => setGenre({ ...genre_des, name: e.target.value})}
             required
           />
         </Form.Group>

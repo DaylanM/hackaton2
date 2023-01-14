@@ -26,8 +26,8 @@ const GenreShow = ({ genre_des, genre_type, deleteGenre }) => {
           <Row>
             <Col>
               <Container>
-                <h1>{name}</h1>
-                <p>Breed:
+                <h1>{Genre}</h1>
+                <p>Genre Description :
                   { breed ? breed : "Unknown Breed" }
                 </p>
                 <p>Registry: { registry ? registry : "Unknown Registry" }</p>
@@ -57,14 +57,7 @@ const GenreShow = ({ genre_des, genre_type, deleteGenre }) => {
                 </Link>
               </Container>
             </Col>
-            <Col>
-              <Image 
-                src={avatar} 
-                alt={name}
-                height='200px'
-                width='200px'
-              />
-            </Col>
+            
           </Row>
         </Modal.Body>
       </Modal>
