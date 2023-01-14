@@ -4,7 +4,7 @@ import { MovieConsumer } from '../../providers/MovieProvider';
 import { useParams } from 'react-router-dom';
 
 const MovieForm = ({ setAdd, addMovie, id, movie_name, description, length, updateMovie, setEdit }) => {
-  const [movie, setMovie] = useState({ movie_name: '', description: '', length: ''})
+  const [movie, setMovie] = useState({ movie_name: '', description: '', length: 0})
   const { genreId } = useParams();
   
   useEffect( () => {
@@ -22,7 +22,7 @@ const MovieForm = ({ setAdd, addMovie, id, movie_name, description, length, upda
       addMovie(genreId, movie)
       setAdd(false)
     }
-    setMovie({ movie_name: '', description: '', length: ''})
+    setMovie({ movie_name: '', description: '', length: 0})
   }
 
   return (
@@ -32,6 +32,7 @@ const MovieForm = ({ setAdd, addMovie, id, movie_name, description, length, upda
           <Form.Label>Movie Name</Form.Label>
           <Form.Control
             name='movie_name'
+            placeholder='Movie Name'
             value={movie.movie_name}
             onChange={(e) => setMovie({ ...movie, movie_name: e.target.value })}
             required
@@ -42,6 +43,7 @@ const MovieForm = ({ setAdd, addMovie, id, movie_name, description, length, upda
           <Form.Label>Body</Form.Label>
           <Form.Control 
             name='description'
+            placeholder='Movie Description'
             value={movie.description}
             onChange={(e) => setMovie({ ...movie, description: e.target.value })}
             required
@@ -52,10 +54,10 @@ const MovieForm = ({ setAdd, addMovie, id, movie_name, description, length, upda
           <Form.Label>Length</Form.Label>
           <Form.Control 
             name='length'
+            placeholder='Minutes?'
             value={movie.length}
             onChange={(e) => setMovie({ ...movie, length: e.target.value })}
             type='integer'
-            max='5'
             required
           />
         </Form.Group>
