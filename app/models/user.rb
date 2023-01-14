@@ -9,5 +9,4 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   validates :first_name, :last_name, presence: true
-
 end
