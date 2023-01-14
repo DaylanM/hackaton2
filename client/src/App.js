@@ -7,6 +7,7 @@ import MainNavbar from './components/shared/MainNavbar';
 import FetchUser from './components/auth/FetchUser';
 import Genres from './components/genres/Genres';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import Movies from './components/movies/Movies';
 
 const App = () => (
   <>
@@ -15,11 +16,12 @@ const App = () => (
       <>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/' element={<ProtectedRoute />} />
-            {/* only routes or pages that can be access when login */}
+          <Route path='/' element={<ProtectedRoute />}>
+            <Route path='/genres' element={<Genres />} />
+            <Route path='/movies' element={<Movies />} />
+          </Route>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/genres' element={<Genres />} />
           <Route path='/*' element={<Nomatch />} />
         </Routes>
       </>
