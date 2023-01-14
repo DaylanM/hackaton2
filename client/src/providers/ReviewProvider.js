@@ -45,7 +45,7 @@ const ReviewProvider = ({ children }) => {
   }
 
   const deleteReview = (movieId, id) => {
-    axios.delete(`/api/movie/${movieId}/reviews/${id}`)
+    axios.delete(`/api/movies/${movieId}/reviews/${id}`)
       .then( res => setReviews( reviews.filter(n => n.id !== id )))
       .catch( err => {
         console.log(err)
