@@ -9,7 +9,7 @@ const MovieForm = ({ setAdd, addMovie, id, movie_name, description, length, upda
   
   useEffect( () => {
     if (id) {
-      setMovie({ movie_name, description, length,  })
+      setMovie({ movie_name, description, length, })
     }
   }, [])
 
