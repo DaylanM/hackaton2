@@ -9,6 +9,9 @@ import Genres from './components/genres/Genres';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Movies from './components/movies/Movies';
 import GenreForm from './components/genres/GenreForm';
+import MovieForm from './components/movies/MovieForm';
+import Reviews from './components/reviews/Reviews';
+import ReviewForm from './components/reviews/ReviewForm';
 
 const App = () => (
   <>
@@ -21,6 +24,9 @@ const App = () => (
             <Route path='/genre' element={<Genres />} />
             <Route path='/:id/updateGenre' element={<GenreForm />} />
             <Route path='/:genreId/movies' element={<Movies />} />
+            <Route path='/:id/updateMovie' element={<MovieForm />} />
+            <Route path='/:movieId/reviews' element={<Reviews />} />
+            <Route path='/:id/updateReview' element={<ReviewForm />} />
           </Route>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
