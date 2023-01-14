@@ -9,6 +9,7 @@ import { initMiddleware } from 'devise-axios';
 import AuthProvider from './providers/AuthProvider';
 import GenreProvider from './providers/GenreProvider';
 import MovieProvider from './providers/MovieProvider';
+import ReviewProvider from './providers/ReviewProvider';
 
 initMiddleware();
 
@@ -19,7 +20,9 @@ root.render(
       <AuthProvider>
         <GenreProvider>
           <MovieProvider>
-            <App />
+            <ReviewProvider>
+              <App />
+            </ReviewProvider>
           </MovieProvider>
         </GenreProvider>
       </AuthProvider>
