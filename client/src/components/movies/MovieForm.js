@@ -1,28 +1,28 @@
 import { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { NoteConsumer } from '../../providers/NoteProvider';
+import { MovieConsumer } from '../../providers/MovieProvider';
 import { useParams } from 'react-router-dom';
 
-const NoteForm = ({ setAdd, addMovie, id, movie_name, description, length, updateNote, setEdit }) => {
-  const [movie, setNote] = useState({ movie_name: '', description: '', length: ''})
+const MovieForm = ({ setAdd, addMovie, id, movie_name, description, length, updateMovie, setEdit }) => {
+  const [movie, setMovie] = useState({ movie_name: '', description: '', length: ''})
   const { genreId } = useParams();
   
   useEffect( () => {
     if (id) {
-      setNote({ movie_name, description, length,  })
+      setMovie({ movie_name, description, length,  })
     }
   }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (id) {
-      updateNote(genreId, id, movie)
+      updateMovie(genreId, id, movie)
       setEdit(false)
     } else {
       addMovie(genreId, movie)
       setAdd(false)
     }
-    setNote({ movie_name: '', description: '', length: ''})
+    setMovie({ movie_name: '', description: '', length: ''})
   }
 
   return (
@@ -33,7 +33,7 @@ const NoteForm = ({ setAdd, addMovie, id, movie_name, description, length, updat
           <Form.Control
             name='movie_name'
             value={movie.movie_name}
-            onChange={(e) => setNote({ ...movie, movie_name: e.target.value })}
+            onChange={(e) => setMovie({ ...movie, movie_name: e.target.value })}
             required
           >
           </Form.Control>
@@ -43,10 +43,9 @@ const NoteForm = ({ setAdd, addMovie, id, movie_name, description, length, updat
           <Form.Control 
             name='description'
             value={movie.description}
-            onChange={(e) => setNote({ ...movie, description: e.target.value })}
+            onChange={(e) => setMovie({ ...movie, description: e.target.value })}
             required
             as="textarea" 
-            rows={3} 
           />
         </Form.Group>
         <Form.Group className="mb-3">
@@ -54,8 +53,9 @@ const NoteForm = ({ setAdd, addMovie, id, movie_name, description, length, updat
           <Form.Control 
             name='length'
             value={movie.length}
-            onChange={(e) => setNote({ ...movie, length: e.target.value })}
+            onChange={(e) => setMovie({ ...movie, length: e.target.value })}
             type='integer'
+            max='5'
             required
           />
         </Form.Group>
