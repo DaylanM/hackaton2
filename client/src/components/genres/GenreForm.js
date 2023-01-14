@@ -2,10 +2,13 @@ import { useState, useEffect } from 'react';
 import { GenreConsumer } from '../../providers/GenreProvider';
 import { Form, Button } from 'react-bootstrap';
 import { useLocation, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const GenreForm = ({ setAdd, addGenre, updateGenre }) => {
   const [genre, setGenre] = useState({ genre_des: '', genre_type: '' })
   const location = useLocation()
+  const navigate = useNavigate()
   const { id } = useParams()
 
   useEffect( () => {
