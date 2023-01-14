@@ -9,8 +9,8 @@ const MainNavbar = ({ user, handleLogout }) => {
     if (user) {
       return (
         <>
-          <Link to='/cats'>
-            <Button variant="link">Cats</Button>
+          <Link to='/genre'>
+            <Button variant="link">Genre</Button>
           </Link>
           <Button 
             onClick={() => handleLogout()} 
@@ -41,7 +41,7 @@ const MainNavbar = ({ user, handleLogout }) => {
       <Navbar>
         <Container>
           <Link to='/'>
-            <Navbar.Brand>CatCafe</Navbar.Brand>
+            <Navbar.Brand>Movies</Navbar.Brand>
           </Link>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
