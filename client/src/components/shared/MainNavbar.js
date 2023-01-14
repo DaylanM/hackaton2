@@ -41,7 +41,7 @@ const MainNavbar = ({ user, handleLogout }) => {
       <Navbar>
         <Container>
           <Link to='/'>
-            <Navbar.Brand>Movies</Navbar.Brand>
+            <Navbar.Brand>Home</Navbar.Brand>
           </Link>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">

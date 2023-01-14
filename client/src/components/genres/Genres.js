@@ -3,9 +3,9 @@ import GenreList from './GenreList';
 import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 import GenreForm from './GenreForm';
-import { Link } from 'react-router-dom';
+import Flash from "../shared/Flash";
 
-const Genres = ({ genres, getAllGenres }) => {
+const Genres = ({ genres, getAllGenres, msgs, setMsgs }) => {
   const [adding, setAdd] = useState(false)
 
   useEffect( () => {
@@ -14,7 +14,18 @@ const Genres = ({ genres, getAllGenres }) => {
 
   return (
     <Container>
-      
+      { msgs ?
+        <Flash
+          variant={msgs.variant}
+          msg={msgs.msg}
+          setErrors={setMsgs}
+        />
+        :
+        null
+      }
+      <Button variant="primary" onClick={() => setAdd(true)}>
+        +
+      </Button>
       <Modal show={adding} onHide={() => setAdd(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Create Genre</Modal.Title>
@@ -39,4 +50,4 @@ const ConnectedGenres = (props) => (
   </GenreConsumer>
 )
 
-export default ConnectedGenre;
+export default ConnectedGenres;

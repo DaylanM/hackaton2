@@ -1,4 +1,4 @@
-// import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import GenreShow from './GenreShow';
 
 const GenreList = ({ genres }) => (

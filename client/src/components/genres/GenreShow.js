@@ -1,16 +1,15 @@
 import { Card, Button, Modal, Container, Row, Col, Image } from 'react-bootstrap';
 import { useState } from 'react';
-import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import { GenreConsumer } from '../../providers/GenreProvider';
 
-const GenreShow = ({ genre_des, genre_type, deleteGenre }) => {
+const GenreShow = ({ genre_des, genre_type, deleteGenre, id}) => {
   const [showing, setShow] = useState(false)
 
   return(
     <>
       <Card style={{ width: '10rem' }}>
-        <Card.Img variant="top" src={avatar} height='140px' />
+        <Card.Img variant="top" height='140px' />
         <Card.Body>
           <Card.Title>{genre_des}</Card.Title>
           <Button variant="outline-dark" onClick={() => setShow(true)}>
@@ -26,21 +25,13 @@ const GenreShow = ({ genre_des, genre_type, deleteGenre }) => {
           <Row>
             <Col>
               <Container>
-                <h1>{Genre}</h1>
-                <p>Genre Description :
-                  { breed ? breed : "Unknown Breed" }
-                </p>
-                <p>Registry: { registry ? registry : "Unknown Registry" }</p>
-                <p>D.O.B: { dob ? <Moment format='MM-DD-YY'>{dob}</Moment> : "Unknown Date of Birth" }</p>
+                <h1>{genre_type}</h1>
+                <h4>{genre_des}</h4>
                 <Link
                   to={`/${id}/updateGenre`}
                   state={{
-                    id,
-                    name,
-                    breed,
-                    registry,
-                    dob,
-                    avatar,
+                    genre_type,
+                    genre_des,
                   }}
                 >
                   <Button>Edit</Button>
@@ -51,9 +42,9 @@ const GenreShow = ({ genre_des, genre_type, deleteGenre }) => {
                   Delete
                 </Button>
                 <Link
-                  to={`/${id}/notes`}
+                  to={`/${id}/movies`}
                 >
-                  <Button>Notes</Button>
+                  <Button>Movies</Button>
                 </Link>
               </Container>
             </Col>

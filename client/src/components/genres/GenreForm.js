@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-// import { GenreConsumer } from '../../providers/CatProvider';
-// import { Form, Button } from 'react-bootstrap';
-// import { useLocation, useParams } from 'react-router-dom';
+import { GenreConsumer } from '../../providers/GenreProvider';
+import { Form, Button } from 'react-bootstrap';
+import { useLocation, useParams } from 'react-router-dom';
 
-const GenreForm = ({ setAdd, addGenre, updateGenre }) => {
+const GenreForm = ({ setAdd, addGenre, updateGenre, genre_des, genre_type }) => {
   const [genre, setGenre] = useState({ genre_des: '', genre_type: '' })
   const location = useLocation()
   const { id } = useParams()
@@ -31,20 +31,22 @@ const GenreForm = ({ setAdd, addGenre, updateGenre }) => {
       { id ? <h1>Update Genre</h1> : null}
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
-          <Form.Label>Genre</Form.Label>
+          <Form.Label>Genre Type</Form.Label>
           <Form.Control 
-            name='genre_des'
-            value={genre.genre_des}
-            onChange={(e) => setGenre({ ...genre_des, name: e.target.value})}
+            name='genre_type'
+            placeholder='Genre'
+            value={genre.genre_type}
+            onChange={(e) => setGenre({ ...genre, genre_type: e.target.value})}
             required
           />
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Genre Type</Form.Label>
+          <Form.Label>Description</Form.Label>
           <Form.Control 
-            name='genre type'
-            value={genre.genre_type}
-            onChange={(e) => setGenre({ ...genre, genre_type: e.target.value})}
+            name='genre_des'
+            placeholder="Genre Description"
+            value={genre.genre_des}
+            onChange={(e) => setGenre({ ...genre, genre_des: e.target.value})}
             required
           />
         </Form.Group>
