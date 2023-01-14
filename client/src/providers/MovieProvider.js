@@ -45,7 +45,7 @@ const MovieProvider = ({ children }) => {
   }
 
   const deleteMovie = (genreId, id) => {
-    axios.delete(`/api/genre/${genreId}/movies/${id}`)
+    axios.delete(`/api/genres/${genreId}/movies/${id}`)
       .then( res => setMovies( movies.filter(n => n.id !== id )))
       .catch( err => {
         console.log(err)

@@ -38,7 +38,7 @@ const GenreProvider = ({ children }) => {
           return c
         })
         setGenres(newUpdatedGenres)
-        navigate('/genres')
+        navigate('/genre')
       })
       .catch( err => {
         console.log(err)
